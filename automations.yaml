@@ -1,0 +1,42 @@
+- id: '1653348053245'
+  alias: ZHA - Aqara Wireless Mini Switch
+  description: ''
+  use_blueprint:
+    path: SeanM/zha-aqara-wireless-mini-switch.yaml
+    input:
+      aqara_mini_switch: 3f81c440e9c5aeba775ef6588b6a8f44
+      button_single_press:
+      - type: toggle
+        device_id: 1c2f731094098dad807406db31955237
+        entity_id: light.tradfri_ampoule_connectee_e804f8fe_level_on_off
+        domain: light
+      button_long_press:
+      - type: turn_off
+        device_id: 4caaa5bfbc1ba9f4ec77138a47c976cc
+        entity_id: switch.tradfri_prise_connectee_2afa6ffe_on_off
+        domain: switch
+      - type: turn_off
+        device_id: 1c2f731094098dad807406db31955237
+        entity_id: light.tradfri_ampoule_connectee_e804f8fe_level_on_off
+        domain: light
+      button_double_press:
+      - type: toggle
+        device_id: 4caaa5bfbc1ba9f4ec77138a47c976cc
+        entity_id: switch.tradfri_prise_connectee_2afa6ffe_on_off
+        domain: switch
+- id: '1654036069575'
+  alias: Yeelight Chambre
+  description: ''
+  trigger:
+  - device_id: 9104364dea45a55e3059f8fd4711b66a
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: button_1
+  condition: []
+  action:
+  - type: toggle
+    device_id: 93986f800fa80ab2f6abd874e0eeaf74
+    entity_id: light.yeelight_color_0x7ec5c6f
+    domain: light
+  mode: single
